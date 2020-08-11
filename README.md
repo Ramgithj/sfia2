@@ -42,7 +42,7 @@ The application makes use of 2 environment variables:
 - `DATABASE_URI`: as described above
 - `SECRET_KEY`: any random String will work here
 
-![app-diagram] #include ports on this
+![app-diagram](https://i.imgur.com/zIrdp7d.png)
 
 ## Testing
 Include information on how to run Unit Tests here
