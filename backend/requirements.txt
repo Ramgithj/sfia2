@@ -5,3 +5,4 @@ Jinja2==2.10.3
 PyMySQL==0.9.3 
 SQLAlchemy==1.3.11
 WTForms==2.2.1 
+requests==2.22.0 
