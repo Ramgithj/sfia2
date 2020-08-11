@@ -11,9 +11,15 @@ The application must:
 ## Application
 
 The application is a Flask application running in 2 micro-services (front-end and back-end).  
-The database directory is available should you: a) want to use a MySQL container for your database at any point or b) want to make use of the `Create.sql` file to pre-populate your database.
 
-The application works by the front-end service making a GET request to the back-end service. The back-end service uses a database connection to query the database and return a result. The front-end service serves up a simple HTML to display the result.
+The database directory is available should you: 
+  a) want to use a MySQL container for your database at any point or
+  b) want to make use of the `Create.sql` file to pre-populate your database.
+
+The application works by:
+1. The front-end service making a GET request to the back-end service. 
+2. The back-end service using a database connection to query the database and return a result.
+3. The front-end service serving up a simple HTML to display the result.
 
 ### Database Connection
 
