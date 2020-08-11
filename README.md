@@ -42,6 +42,22 @@ The application makes use of **2 environment variables**:
 - `DATABASE_URI`: as described above
 - `SECRET_KEY`: any *random string* will work here
 
+### Running a Flask Application
+
+Typically, to run a Flask application, you would:
+
+1. Install the pip dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+2. Run the application:
+
+```
+python3 app.py
+```
+
 ![app-diagram](https://i.imgur.com/wnbDazy.png)
 
 ## Testing
