@@ -8,9 +8,9 @@ The following information should be everything you need to complete the project.
 
 The application must:
 
-- Be deployed to a VM for testing
-- Be deployed to production in a Kubernetes Cluster
-- Make use of a Managed Database for both testing and production
+- Be deployed to a **Virtual Machine for testing**
+- Be deployed in a **managed Kubernetes Cluster for production**
+- Make use of a **managed Database for both testing and production**
 
 ## Application
 
