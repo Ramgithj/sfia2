@@ -1,6 +1,10 @@
 # QAC SFIA2 Project
 
-Flask application, ready to deploy, for your SFIA2 project.
+This application is a simple Flask application, ready to be deployed, for your SFIA2 project.
+
+The following information should be everything you need to complete the project.
+
+## Brief
 
 The application must:
 
