@@ -40,7 +40,7 @@ mysql+pymysql://[db-user]:[db-password]@[db-host]/[db-name]
 The application makes use of 2 environment variables:
 
 - `DATABASE_URI`: as described above
-- `SECRET_KEY`: any random String will work here
+- `SECRET_KEY`: any *random string* will work here
 
 ![app-diagram](https://i.imgur.com/wnbDazy.png)
 
