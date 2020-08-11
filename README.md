@@ -54,7 +54,7 @@ Brief explanation about what they do(?)
 
 The Minimum Viable Product for this project, should adhere to the following infrastructure diagram:
 
-![mvp-diagram]
+![mvp-diagram](https://imgur.com/pcH67db)
 
 Stretch goals for this project include:
 
@@ -64,6 +64,6 @@ Stretch goals for this project include:
 
 Completing the stretch goals should yield an infrastructure diagram similar to the following:
 
-![stretch-digram]
+![stretch-digram](https://imgur.com/0uQqbBg)
 
 **Good luck!**
