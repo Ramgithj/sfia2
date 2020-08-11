@@ -58,8 +58,8 @@ The Minimum Viable Product for this project, should adhere to the following infr
 
 Stretch goals for this project include:
 
-- Include the Kubernetes Cluster for production in your Terraform
-- Use Ansible to configure the Test VM's environment
+- Use Terraformt to configure the Kubernetes Cluster for production 
+- Use Terraform and Ansible to configure the Test VM
 - Run Integration Tests, as well as Unit Tests
 
 Completing the stretch goals should yield an infrastructure diagram similar to the following:
