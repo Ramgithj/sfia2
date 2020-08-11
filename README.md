@@ -13,8 +13,8 @@ The application must:
 The application is a Flask application running in 2 micro-services (front-end and back-end).  
 
 The database directory is available should you: 
-  a) want to use a MySQL container for your database at any point or
-  b) want to make use of the `Create.sql` file to pre-populate your database.
+  - a) want to use a MySQL container for your database at any point or
+  - b) want to make use of the `Create.sql` file to pre-populate your database.
 
 The application works by:
 1. The front-end service making a GET request to the back-end service. 
@@ -23,7 +23,7 @@ The application works by:
 
 ### Database Connection
 
-The Database connection is handled in the ./backend/application/__init__.py file.
+The Database connection is handled in the `./backend/application/__init__.py` file.
 
 A typical Database URI follows the form:
 
