@@ -68,15 +68,15 @@ Brief explanation about what they do(?)
 
 ## Infrastructure
 
-The **Minimum Viable Product** for this project, should adhere to the following infrastructure diagram:
+The **Minimum Viable Product** for this project should adhere to the following infrastructure diagram:
 
 ![mvp-diagram](https://imgur.com/pcH67db.png)
 
 **Stretch goals** for this project include:
 
-- Use **Terraform to configure the Kubernetes Cluster** for production 
-- Use **Terraform and Ansible to configure the Test VM**
-- Run **Integration Tests**, as well as Unit Tests
+- Using **Terraform to configure the Kubernetes Cluster** for production 
+- Using **Terraform and Ansible to configure the Test VM**
+- Running **Integration Tests**, as well as Unit Tests
 
 Completing the stretch goals should yield an infrastructure diagram similar to the following:
 
