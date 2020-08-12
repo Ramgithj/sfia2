@@ -61,11 +61,20 @@ python3 app.py
 ![app-diagram](https://i.imgur.com/wnbDazy.png)
 
 ## Testing
-Include information on how to run Unit Tests here
 
-Show where the integration test files live
+Unit Tests have been included for both the front-end and back-end services.
 
-Brief explanation about what they do(?)
+You can run the tests using the command:
+
+```
+pytest
+```
+
+To generate a coverage report, you will need to run:
+
+```
+pytest --cov application
+```
 
 ## Infrastructure
 
