@@ -14,16 +14,16 @@ The application must:
 
 ## Application
 
-The application is a Flask application running in **2 micro-services** (*front-end* and *back-end*).  
+The application is a Flask application running in **2 micro-services** (*frontend* and *backend*).  
 
 The database directory is available should you: 
   - want to use a MySQL container for your database at any point, *or*
-  - want to make use of the `Create.sql` file to **pre-populate your database**.
+  - want to make use of the `Create.sql` file to **set up and pre-populate your database**.
 
 The application works by:
-1. The front-end service making a GET request to the back-end service. 
-2. The back-end service using a database connection to query the database and return a result.
-3. The front-end service serving up a simple HTML (`index.html`) to display the result.
+1. The frontend service making a GET request to the backend service. 
+2. The backend service using a database connection to query the database and return a result.
+3. The frontend service serving up a simple HTML (`index.html`) to display the result.
 
 ### Database Connection
 
@@ -62,7 +62,9 @@ python3 app.py
 
 ## Testing
 
-Unit Tests have been included for both the front-end and back-end services.
+Unit Tests have been included for both the frontend and backend services.
+
+A new database, called `testdb`, will be needed to test the backend service, and this database connection will need to be stored in an evironment variable called `TEST_DATABASE_URI`.
 
 You can run the tests using the command:
 
