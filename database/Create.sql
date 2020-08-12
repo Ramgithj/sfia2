@@ -1,3 +1,4 @@
+CREATE DATABASE testdb;
 CREATE DATABASE users;
 USE users;
 

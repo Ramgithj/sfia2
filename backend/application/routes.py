@@ -5,7 +5,7 @@ import requests
 import random
 
 @app.route('/backend', methods=['GET'])
-def post_numbers():
+def get_users():
     userName = Users.query.all()
     users = []
     for user in userName:
