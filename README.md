@@ -64,7 +64,10 @@ python3 app.py
 
 Unit Tests have been included for both the frontend and backend services.
 
-A new database, called `testdb`, will be needed to test the backend service, and this database connection will need to be stored in an evironment variable called `TEST_DATABASE_URI`.
+To test the backend service you will need two things:
+
+1. A database called `testdb`
+2. a `TEST_DATABASE_URI` environment variable, which contains the database connection for the `testdb` database.
 
 You can run the tests using the command:
 
