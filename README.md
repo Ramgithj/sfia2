@@ -1,6 +1,6 @@
 # QAC SFIA2 Project
 
-This application is a simple Flask application, ready to be deployed, for your SFIA2 project.
+This application is a simple [Flask application](https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application), ready to be deployed, for your SFIA2 project.
 
 The following information should be everything you need to complete the project.
 
@@ -10,7 +10,7 @@ The application must:
 
 - Be deployed to a **Virtual Machine for testing**
 - Be deployed in a **managed Kubernetes Cluster for production**
-- Make use of a **managed Database for both testing and production**
+- Make use of a **managed Database solution**
 
 ## Application
 
@@ -33,6 +33,12 @@ A typical Database URI follows the form:
 
 ```
 mysql+pymysql://[db-user]:[db-password]@[db-host]/[db-name]
+```
+
+An example of this would be:
+
+```
+mysql+pymysql://root:password@mysql:3306/orders
 ```
 
 ### Environment Variables
@@ -83,7 +89,7 @@ pytest --cov application
 
 ## Infrastructure
 
-The **Minimum Viable Product** for this project should adhere to the following infrastructure diagram:
+The **Minimum Viable Product** for this project should at least demonstrate the following infrastructure diagram:
 
 ![mvp-diagram](https://imgur.com/pcH67db.png)
 
