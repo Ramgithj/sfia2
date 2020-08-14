@@ -27,7 +27,7 @@ The application works by:
 
 ### Database Connection
 
-The Database connection is handled in the `./backend/application/__init__.py` file.
+The database connection is handled in the `./backend/application/__init__.py` file.
 
 A typical Database URI follows the form:
 
