@@ -97,10 +97,9 @@ The **Minimum Viable Product** for this project should at least demonstrate the 
 
 - Using **Terraform to configure the Kubernetes Cluster** for production 
 - Using **Terraform and Ansible to configure the Test VM**
-- Running **Integration Tests**, as well as Unit Tests
 
 Completing the stretch goals should yield an infrastructure diagram similar to the following:
 
-![stretch-digram](https://imgur.com/0uQqbBg.png)
+![stretch-digram](https://i.imgur.com/Q5zljVl.png)
 
 **Good luck!**
