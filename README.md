@@ -91,7 +91,7 @@ pytest --cov application
 
 The **Minimum Viable Product** for this project should at least demonstrate the following infrastructure diagram:
 
-![mvp-diagram](https://imgur.com/pcH67db.png)
+![mvp-diagram](https://i.imgur.com/i5qfOas.png)
 
 **Stretch goals** for this project include:
 
