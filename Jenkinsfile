@@ -19,6 +19,7 @@ pipeline {
     stage('login and push to dockerhub') {
       steps {
         sh 'sudo docker login'
+        sh 'sudo docker push rjagajith/flask-frontend:1.0'
         sh 'sudo docker push rjagajith/flask-app:1.0'
       }
     }
