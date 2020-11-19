@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build frontend images') {
       steps {
-        sh 'cd frontend/'
+        sh 'cd ./frontend/'
         sh 'sudo docker build -t rjagajith/flask-app:1.0 .'
       }
     }
