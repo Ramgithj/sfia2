@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage {'clone repo'} {
-      steps{
-        sh 'git clone https://github.com/Ramgithj/sfia2.git'
-      }
-    }
     stage('build frontend images') {
       steps {
         sh 'cd frontend/'
