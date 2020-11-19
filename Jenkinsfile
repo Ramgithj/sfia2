@@ -1,9 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('run the tests') {
-      
-    }
     stage('build frontend images') {
       steps {
         sh 'cd frontend/'
