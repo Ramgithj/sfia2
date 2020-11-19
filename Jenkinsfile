@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh 'cd ..'
         sh 'cd backend/'
-        sh 'sudo docker build -t rjagajith/flask-app:1.0 .'
+        sh 'sudo docker build -t rjagajith/flask-app:1.0 /home/ubuntu/cne-sfia2-brief/backend/'
       }
     }
     stage('login and push to dockerhub') {
