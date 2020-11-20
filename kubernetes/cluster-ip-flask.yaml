@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app
+  namespace: sfia
+  labels:
+    app: flask
+spec:
+  selector:
+    app: flask
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: ClusterIP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
