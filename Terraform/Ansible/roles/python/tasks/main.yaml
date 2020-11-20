@@ -1,0 +1,9 @@
+  - name: 'download and install python, pytest and pip using apt'
+    apt:
+      pkg:
+      - python
+      - python-pip
+      - python-pytest
+      state: latest
+      # run an apt update before installing the packages
+      update_cache: true
