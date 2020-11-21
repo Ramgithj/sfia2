@@ -12,6 +12,15 @@ pipeline {
         sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
       }
     }
+    stage('change working directory') {
+      steps {
+          sh "pwd"
+          dir('/home/ubuntu/){
+            sh "pwd"
+          }
+          sh "pwd"
+        } 
+  }
     stage('clone repo') {
       steps{
         sh 'sudo rm -r sfia2'
