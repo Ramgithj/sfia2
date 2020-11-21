@@ -24,6 +24,7 @@ pipeline {
     stage('docker-compose up and exec') {
       steps{
         dir ('/var/lib/jenkins/workspace/sfia-2/sfia2') {
+        sh 'sudo chmod +x docker-compose.yaml'
         sh 'docker-compose up -d --build'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
