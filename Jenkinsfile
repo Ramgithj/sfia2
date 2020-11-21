@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ssh in to the test-vm') {
       steps {
-        sh 'ssh -i /home/ubuntu/.ssh/id_rsa ubuntu@34.244.54.1'    
+        sh 'ssh -i /var/lib/jenkins/id_rsa ubuntu@34.244.54.1'    
       }
     }
     stage('set ENV variables') {
