@@ -15,7 +15,7 @@ pipeline {
     }
     stage('clone repo') {
       steps{
-        sh 'cd /home/ubuntu/'
+        sh 'cd sfia2/'
         sh 'sudo rm -r sfia2'
         sh 'git clone https://github.com/Ramgithj/sfia2.git'
         //sh 'cd sfia2/'
