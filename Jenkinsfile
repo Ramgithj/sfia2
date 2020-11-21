@@ -12,18 +12,13 @@ pipeline {
         sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
       }
     }
-    stage('change working directory') {
-      steps {
-          dir('/home/ubuntu/') {
-            sh "pwd"
-          }
-        } 
-      }
     stage('clone repo') {
       steps{
+        dir('/home/ubuntu/') {
         sh 'sudo rm -r sfia2'
         sh 'git clone https://github.com/Ramgithj/sfia2.git'
         sh 'cd sfia2/'
+        }
       }
     }
     stage('docker-compose up and exec') {
