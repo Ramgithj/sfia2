@@ -12,10 +12,14 @@ pipeline {
         sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
       }
     }
+    stage('clone repo') {
+      steps{
+        sh 'git clone https://github.com/Ramgithj/sfia2.git'
+        sh 'cd sfia2/'
+      }
+    }
     stage('docker compose up and exec') {
       steps{
-        sh 'cd .. && cd .. && cd .. && cd .. && cd .. && cd .. && cd .. '
-        sh 'pwd'
         sh 'docker compose up -d'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
