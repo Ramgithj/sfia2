@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('ssh in to the test-vm') {
       steps {
+        sh 'sudo su jenkins'
         sh 'ssh -i /var/lib/jenkins/id_rsa ubuntu@34.244.54.1'    
       }
     }
