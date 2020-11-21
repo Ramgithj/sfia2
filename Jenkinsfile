@@ -2,11 +2,35 @@
 pipeline {
   agent any
   stages {
+    stage('ssh in to the test-vm') {
+      steps {
+        sh 'ssh -i /home/ubuntu/.ssh/id_rsa ubuntu@34.244.54.1'    
+      }
+    }
+    stage('set ENV variables') {
+      steps{
+        sh 'export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users
+        sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb
+      }
+    }
+    stage('docker compose up and exec') {
+      steps{
+        sh 'cd sfia2'
+        sh 'docker compose up -d'
+        sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
+        sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
+      }
+    }
+    stage('stop the application and exit in to jenkins VM') {
+      steps{
+        sh 'docker compose down'
+        sh 'exit'
+      }
+    }
     stage('build frontend images') {
       steps {
         sh 'cd frontend/'
-        sh 'sudo docker build -t rjagajith/flask-frontend:1.0 /home/ubuntu/cne-sfia2-brief/frontend/'
-        
+        sh 'sudo docker build -t rjagajith/flask-app:1.0 /home/ubuntu/cne-sfia2-brief/frontend/'
       }
     }
     stage('build backend images') {
@@ -19,7 +43,6 @@ pipeline {
     stage('login and push to dockerhub') {
       steps {
         sh 'sudo docker login'
-        sh 'sudo docker push rjagajith/flask-frontend:1.0'
         sh 'sudo docker push rjagajith/flask-app:1.0'
       }
     }
