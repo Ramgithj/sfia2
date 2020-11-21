@@ -8,12 +8,14 @@ pipeline {
     }
     stage('set ENV variables') {
       steps{
+        sh 'cd /home/ubuntu/'
         sh 'export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users'
         sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
       }
     }
     stage('clone repo') {
       steps{
+        sh 'cd /home/ubuntu/'
         sh 'sudo rm -r sfia2'
         sh 'git clone https://github.com/Ramgithj/sfia2.git'
         //sh 'cd sfia2/'
@@ -21,11 +23,9 @@ pipeline {
     }
     stage('docker-compose up and exec') {
       steps{
-        dir('sfia2/') {
         sh 'docker-compose up -d --build'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
-        }
         }
     }
     stage('stop the application and exit in to jenkins VM') {
