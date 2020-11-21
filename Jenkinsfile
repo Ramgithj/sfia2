@@ -14,13 +14,11 @@ pipeline {
     }
     stage('change working directory') {
       steps {
-          sh "pwd"
-          dir('/home/ubuntu/){
+          dir('/home/ubuntu/) {
             sh "pwd"
           }
-          sh "pwd"
         } 
-  }
+      }
     stage('clone repo') {
       steps{
         sh 'sudo rm -r sfia2'
