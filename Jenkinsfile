@@ -16,8 +16,6 @@ pipeline {
     }
     stage('clone repo') {
       steps{
-        sh 'cd ..'
-        sh 'cd ..'
         sh 'sudo rm -r sfia2'
         sh 'git clone https://github.com/Ramgithj/sfia2.git'
         //sh 'cd sfia2/'
@@ -25,11 +23,12 @@ pipeline {
     }
     stage('docker-compose up and exec') {
       steps{
-        sh 'cd sfia2/'
+        dir ('/var/lib/jenkins/workspace/sfia-2/sfia2') {
         sh 'docker-compose up -d --build'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
         }
+      }
     }
     stage('stop the application and exit in to jenkins VM') {
       steps{
