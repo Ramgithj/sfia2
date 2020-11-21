@@ -8,8 +8,8 @@ pipeline {
     }
     stage('set ENV variables') {
       steps{
-        sh 'export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users
-        sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb
+        sh 'export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users'
+        sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102!@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
       }
     }
     stage('docker compose up and exec') {
