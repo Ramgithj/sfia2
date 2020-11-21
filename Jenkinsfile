@@ -14,7 +14,7 @@ pipeline {
     }
     stage('change working directory') {
       steps {
-          dir('/home/ubuntu/) {
+          dir('/home/ubuntu/') {
             sh "pwd"
           }
         } 
