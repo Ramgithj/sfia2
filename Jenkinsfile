@@ -18,9 +18,9 @@ pipeline {
         sh 'cd sfia2/'
       }
     }
-    stage('docker compose up and exec') {
+    stage('docker-compose up and exec') {
       steps{
-        sh 'docker compose up -d --build'
+        sh 'docker-compose up -d --build'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
       }
