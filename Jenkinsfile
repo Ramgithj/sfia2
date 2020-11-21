@@ -14,7 +14,8 @@ pipeline {
     }
     stage('docker compose up and exec') {
       steps{
-        sh 'cd ~/home/ubuntu/sfia2'
+        sh 'cd .. && cd .. && cd .. && cd .. && cd .. && cd .. && cd .. '
+        sh 'pwd'
         sh 'docker compose up -d'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
