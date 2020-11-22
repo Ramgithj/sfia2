@@ -10,7 +10,7 @@ pipeline {
     stage('build frontend images') {
       steps {
         sh 'cd /home/ubuntu/sfia2/frontend/'
-        sh 'sudo docker build -t rjagajith/flask-app:1.0 /home/ubuntu/sfia2/frontend/'
+        sh 'sudo docker build -t rjagajith/flask-frontend:1.0 /home/ubuntu/sfia2/frontend/'
       }
     }
     stage('build backend images') {
@@ -23,6 +23,7 @@ pipeline {
     stage('login and push to dockerhub') {
       steps {
         sh 'sudo docker login'
+        sh 'sudo docker push rjagajith/flask-frontend:1.0'
         sh 'sudo docker push rjagajith/flask-app:1.0'
       }
     }
