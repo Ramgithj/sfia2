@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('ssh in to the test-vm') {
       steps {
-        sh 'sudo su jenkins'
-        sh 'ssh -i /var/lib/jenkins/id_rsa ubuntu@34.244.54.1'    
+        sh 'chmod +x TestVM.sh'
+        sh './TestVM.sh'
       }
     }
     stage('set ENV variables') {
@@ -14,31 +14,7 @@ pipeline {
         sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
       }
     }
-    stage('clone repo') {
-      steps{
-        sh 'sudo rm -r sfia2'
-        sh 'git clone https://github.com/Ramgithj/sfia2.git'
-        //sh 'cd sfia2/'
-         }
-    }
-    stage('docker-compose up and exec') {
-      steps{
-        dir ('/var/lib/jenkins/workspace/sfia-2/sfia2') {
-        sh 'sudo chmod +x docker-compose.yaml'
-        sh 'export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users'
-        sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
-        sh 'docker-compose up -d --build'
-        sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
-        sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
-        }
-      }
-    }
-    stage('stop the application and exit in to jenkins VM') {
-      steps{
-        sh 'docker compose down'
-        sh 'exit'
-      }
-    }
+   
     stage('build frontend images') {
       steps {
         sh 'cd frontend/'
