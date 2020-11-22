@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd kubernetes/
+cd /home/ubuntu/sfia2/kubernetes/
 kubectl create ns sfia
 kubectl apply -f nginx-conf.yaml
 kubectl apply -f flask-app-be.yaml
