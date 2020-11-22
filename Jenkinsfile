@@ -17,7 +17,7 @@ pipeline {
    
     stage('build frontend images') {
       steps {
-        sh 'cd frontend/'
+        sh 'cd /home/ubuntu/sfia2/frontend/'
         sh 'sudo docker build -t rjagajith/flask-app:1.0 /home/ubuntu/cne-sfia2-brief/frontend/'
       }
     }
