@@ -1,9 +1,6 @@
 #!/bin/bash
 ssh -i /var/lib/jenkins/id_rsa ubuntu@54.247.4.200 << EOF
-if [ ! -d sfia2 ]
-then
-    git clone https://github.com/Ramgithj/sfia2.git
-fi
+git clone https://github.com/Ramgithj/sfia2.git
 cd sfia2/
 export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users
 export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb
