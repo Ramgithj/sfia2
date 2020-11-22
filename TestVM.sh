@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ssh -i /var/lib/jenkins/id_rsa ubuntu@34.244.54.1 << EOF
+ssh -i /var/lib/jenkins/id_rsa ubuntu@54.247.4.200 << EOF
 
 if [ ! -d sfia2 ]
 then
