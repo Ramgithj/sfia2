@@ -27,5 +27,11 @@ pipeline {
         sh 'sudo docker push rjagajith/flask-app:1.0'
       }
     }
+    stage('deploy') {
+      steps {
+        sh './deploy.sh'
+        
+      }
+    }
   }
 }
