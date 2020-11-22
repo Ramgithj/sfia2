@@ -1,5 +1,5 @@
 #!/bin/bash
-ssh -tt-i /var/lib/jenkins/id_rsa ubuntu@54.247.4.200 << EOF
+ssh -i /var/lib/jenkins/id_rsa ubuntu@54.247.4.200 << EOF
 if [ ! -d sfia2 ]
 then
     git clone https://github.com/Ramgithj/sfia2.git
