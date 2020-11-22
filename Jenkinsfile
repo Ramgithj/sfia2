@@ -25,6 +25,8 @@ pipeline {
       steps{
         dir ('/var/lib/jenkins/workspace/sfia-2/sfia2') {
         sh 'sudo chmod +x docker-compose.yaml'
+        sh 'export DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/users'
+        sh 'export TEST_DATABASE_URI=mysql+pymysql://admin:radiatorspoon102@testdb.cvuavhfwkpq2.eu-west-1.rds.amazonaws.com/testdb'
         sh 'docker-compose up -d --build'
         sh 'docker exec backend bash -c "pytest tests/ --cov application" > backend-report.txt'
         sh 'docker exec frontend bash -c "pytest tests/ --cov application" > frontend-report.txt'
